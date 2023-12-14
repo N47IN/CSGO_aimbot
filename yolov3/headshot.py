@@ -93,7 +93,8 @@ while True:
         y = box[1]
         w = box[2]
         h = box[3]
-        pyautogui.moveTo(int(center_point[i][0]*1920/416), int((center_point[i][1]-h/2.9)*1080/416))
+        pyautogui.moveTo(int(center_point[i][0]*1920/416), int((center_point[i][1]-h/2.9)*1080/416)
+        pyautogui.click(int(center_point[i][0]*1920/416), int((center_point[i][1]-h/2.9)*1080/416))
         draw_bounding_box(frame, class_ids[i], confidences[i], round(x), round(y), round(x+w), round(y+h),center_point[detections])
         detections+=1
     cv2.imshow("object detection", frame)
